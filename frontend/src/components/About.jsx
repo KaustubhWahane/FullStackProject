@@ -33,7 +33,7 @@ function About() {
     <div className="mt-8">
       <GridContainer/>
     </div>
-  </div>
+    </div>
   
   );
 }

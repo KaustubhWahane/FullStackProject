@@ -30,7 +30,7 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/signin" element={<SignInPage />} /> 
           </Routes>
