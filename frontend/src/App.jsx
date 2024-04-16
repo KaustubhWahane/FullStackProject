@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
 import ContactUs from './components/ContactUs';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SignInPage from './components/SignInPage';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -21,17 +22,17 @@ function App() {
   const handleSignOut = () => {
     setIsSignedIn(false);
   };
-
-
+  
   return (
     <Router>
       <div className={`bg-${isSignedIn ? 'green' : 'slate'}-500`}>
-      <NavBar isSignedIn={isSignedIn} onSignIn={handleSignIn} onSignOut={handleSignOut} />
+        <NavBar isSignedIn={isSignedIn} onSignIn={handleSignIn} onSignOut={handleSignOut} />
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/signin" element={<SignInPage />} /> 
           </Routes>
         </div>
       </div>

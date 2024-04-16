@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 function NavBar({isSignedIn, onSignIn, onSignOut}) {
+  const navigate = useNavigate();
 
-  const handleSignInClick = () => {
+   function handleSignInClick ()  {
     if (isSignedIn) {
       onSignOut();
+      navigate(-1);
     } else {
       onSignIn();
+      navigate('/signin'); 
     }
-  };
+  }
 
   return (
     <>
