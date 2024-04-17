@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function SignInPage() {
   const [formData, setFormData] = useState({
@@ -6,13 +8,22 @@ function SignInPage() {
     password: ''
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
+  const navigate = useNavigate(); // Use useNavigate for React Router v6
 
-    console.log(formData);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    try {
+      const response = await axios.post('http://localhost:5000/signin', formData);
+      console.log(response.data);
+
+      // If signin successful, navigate to home page
+      navigate('/');
+    } catch (error) {
+      console.error('Error signin in:', error.message);
+    }
   };
 
-  // Function to handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
