@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRouter = require("./routes/userRoutes"); 
-const cartItemRouter = require("./routes/cartItemRoutes"); 
+const userfeedback = require("./routes/contactRouter");
 
 const app = express();
 const PORT = 5000; 
@@ -23,7 +23,7 @@ mongoose.connect(MONGODB_URI, {
 
 // Using Routes 
 app.use(userRouter);
-app.use(cartItemRouter);
+app.use(userfeedback);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -68,24 +68,24 @@ function Home() {
         <h1 className="text-creamyVanilla text-center text-custom text-4xl p-3">
           Here&apos;s the various International food in a simplified way!
         </h1>
-         {/* Cart Items */}
-      <div className="text-creamyVanilla text-center my-8">
-        <h2 className="text-2xl font-bold mb-4">Your Cart Items:</h2>
-        <ul>
-          {Object?.entries(cartItems.reduce((acc, item) => {
-            if (!acc[item.idMeal]) {
-              acc[item.idMeal] = { ...item, quantity: 1 };
-            } else {
-              acc[item.idMeal].quantity++;
-            }
-            return acc;
-          }, {}))?.map(([key ,value], index) => (
-            <li key={index}>
-              {value.quantity}x {value.strMeal}
-            </li>
-          ))}
-        </ul>
-      </div>
+        {/* Cart Items */}
+        <div className="text-creamyVanilla text-center my-8">
+          <h2 className="text-2xl font-bold mb-4">Your Cart Items:</h2>
+          <ul>
+            {Object.entries(cartItems.reduce((acc, item) => {
+              if (!acc[item.idMeal]) {
+                acc[item.idMeal] = { ...item, quantity: 1 };
+              } else {
+                acc[item.idMeal].quantity++;
+              }
+              return acc;
+            }, {})).map(([key, value], index) => (
+              <li key={index}>
+                {value.quantity}x {value.strMeal}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="flex flex-wrap justify-around items-center">
           {mealData?.map((meal) => (
             <div key={meal?.idMeal} className="border border-black p-4 m-4 w-64 h-96 rounded-lg flex flex-col items-center">
