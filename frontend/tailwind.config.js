@@ -13,6 +13,7 @@ export default {
     colors: {
       richChocolate: '#5D4037',
       creamyVanilla: '#FFF9C4',
+      warmBeige:"#D2B48C"
     },
   }
   },

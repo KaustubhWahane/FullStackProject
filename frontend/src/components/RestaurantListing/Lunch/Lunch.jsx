@@ -10,12 +10,11 @@ const RestaurantListing = ({ name,  description, rating, image }) => {
       <p><span className="font-semibold font-pacifico">Description:</span> {description}</p>
       <p><span className="font-semibold font-pacifico">Rating:</span> {rating}/ 5</p>
       <Toaster richColors position="top-center"/>
-      <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded- mr-4"  onClick={() => toast.error('Have you signed it?')}>
-        Add
-      </button>
-      <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md"  onClick={() => toast.error('Have you signed it?')}>
-        Buy-Now
-      </button>
+      <div className='mt-2 flex justify-center items-center'>
+        <button className="mt-2 bg-blue-500 text-white px-4 py-2 rounded- mr-4"  onClick={() => toast.error('Have you signed it?')}>
+          Add
+        </button>
+      </div>
     </div>
     </>
   );

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
@@ -10,11 +10,6 @@ import SignInPage from './components/SignInPage';
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-  /*
-   Another method of doing it however there is a flaw
-  const handleSignIn = () => {
-    setIsSignedIn(isSignedIn => !isSignedIn);
-  */ 
   const handleSignIn = () => {
     setIsSignedIn(true);
   };
@@ -22,7 +17,7 @@ function App() {
   const handleSignOut = () => {
     setIsSignedIn(false);
   };
-  
+
   return (
     <Router>
       <div className={`bg-${isSignedIn ? 'green' : 'slate'}-500`}>
@@ -30,9 +25,9 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/signin" element={<SignInPage />} /> 
+            <Route path="/signin" element={<SignInPage />} />
           </Routes>
         </div>
       </div>

@@ -10,7 +10,7 @@ function Home() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  async function fetchData()  {
+  async function fetchData() {
     try {
       const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
 
@@ -23,11 +23,11 @@ function Home() {
     } catch (err) {
       console.error('Error fetching data:', err.message);
       setError(
-      <div>
-        <h1 className='text-center text-4xl text-black'>Oops! Sorry couldn&apos;t show the dishes!</h1>
-      </div>
+        <div>
+          <h1 className='text-center text-4xl text-black'>Oops! Sorry couldn&apos;t show the dishes!</h1>
+        </div>
       );
-    } 
+    }
     finally {
       setLoading(false);
     }
@@ -37,9 +37,10 @@ function Home() {
     fetchData();
   }, []);
 
+
   if (loading) {
     return (
-      <div id="home" className="bg-orange-500">
+      <div id="home" className="bg-richChocolate">
         <p className="text-white text-center text-5xl p-4">Loading...</p>
       </div>
     );
@@ -47,19 +48,19 @@ function Home() {
 
   if (error) {
     return (
-      <div id="home" className="bg-orange-500">
-        <h2 className="text-center font-extrabold font-serif bg-red-700">Home Page</h2>
+      <div id="home" className="bg-richChocolate">
+        <h2 className="text-center font-extrabold text-creamyVanilla bg-red-700">Home Page</h2>
         <p className="text-red-500">{error}</p>
       </div>
     );
   }
 
   return (
-    <div id="home" className="bg-orange-500">
+    <div id="home" className="bg-richChocolate">
       <ImageSlider />
-      <br /> <br/>
+      <br /> <br />
       <div>
-        <h1 className="bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-center text-custom text-4xl p-3">
+        <h1 className="text-creamyVanilla text-center text-custom text-4xl p-3">
           Here&apos;s the various International food in a simplified way!
         </h1>
         <div className="flex flex-wrap justify-around items-center">
@@ -68,10 +69,10 @@ function Home() {
               <div className="w-full">
                 <img src={meal?.strMealThumb} alt={meal?.strMeal} className="w-full rounded-t-lg" />
               </div>
-              <div className="mt-2 font-bold">{meal?.strMeal}</div>
-              <div className="text-gray-600">{meal?.strCategory}</div>
+              <div className="mt-2 font-bold text-creamyVanilla">{meal?.strMeal}</div>
+              <div className="text-creamyVanilla">{meal?.strCategory}</div>
               <button
-                className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md"
+                className="mt-2 bg-blue-500 text-creamyVanilla px-4 py-2 rounded-md"
               >
                 Add
               </button>
@@ -81,7 +82,7 @@ function Home() {
       </div>
 
       {/* Breakfasts */}
-      <h1 className="bg-gray-400 text-center text-custom text-4xl p-3">Grab your Breakfast!</h1>
+      <h1 className="bg-richChocolate font-pacifico text-creamyVanilla text-center text-custom text-4xl p-3">Grab your Breakfast!</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
         {restaurantData.map((data, index) => (
           <Breakfast key={index} {...data} />
@@ -89,12 +90,17 @@ function Home() {
       </div>
 
       {/* Lunch */}
-      <h1 className="bg-gray-400 text-center text-custom text-4xl p-3">What&apos;s for dinner?</h1>
+      <h1 className="bg-richChocolate font-pacifico text-creamyVanilla text-center text-custom text-4xl p-3">What&apos;s for dinner?</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
         {restaurantLunch.map((data, index) => (
           <Lunch key={index} {...data} />
         ))}
-        </div>
+      </div>
+      <li>
+                <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]" >
+                  Checkout
+                </button>
+              </li>
     </div>
   );
 }

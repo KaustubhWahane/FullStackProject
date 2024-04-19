@@ -18,7 +18,7 @@ export const restaurantLunch = [
   },
   {
     name: "Butter Chicken with Naan",
-    description: "Butter chicken is a popular Indian dish known for its tender, marinated chicken pieces cooked in a rich and creamy tomato-based sauce. It's a flavorful and indulgent culinary experience.",
+    description: "Butter chicken is a popular Indian dish known for its tender, marinated chicken pieces cooked in a rich and creamy tomato-based sauce.",
     rating: 4.5,
     image: ButterChicken
   },
@@ -30,7 +30,7 @@ export const restaurantLunch = [
   },
   {
     name: "Mixed Veg",
-    description: "Mixed Veg, a delightful medley of assorted vegetables, is cooked to perfection, offering a colorful and nutritious dish that pleases both the eyes and the palate.",
+    description: "Mixed Veg, a delightful medley of assorted vegetables, is cooked to perfection, offering a colorful and nutritious dish",
     rating: 4.6,
     image: MixedVeg
   },
