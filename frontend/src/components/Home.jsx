@@ -4,7 +4,6 @@ import Breakfast from './RestaurantListing/Breakfast/Breakfast';
 import Lunch from './RestaurantListing/Lunch/Lunch';
 import { restaurantData } from './RestaurantListing/Breakfast/Data';
 import { restaurantLunch } from './RestaurantListing/Lunch/Data';
-import { Toaster, toast } from 'sonner';
 
 function Home() {
   const [mealData, setMealData] = useState([]);
@@ -71,10 +70,8 @@ function Home() {
               </div>
               <div className="mt-2 font-bold">{meal?.strMeal}</div>
               <div className="text-gray-600">{meal?.strCategory}</div>
-              <Toaster richColors position="top-center"/>
               <button
                 className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-md"
-                onClick={() => toast.error('Have you signed in?')}
               >
                 Add
               </button>

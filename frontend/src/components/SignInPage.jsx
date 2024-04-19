@@ -8,16 +8,16 @@ function SignInPage() {
     password: ''
   });
 
-  const navigate = useNavigate(); // Use useNavigate for React Router v6
+  // Navigating the page to Home page
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
 
     try {
       const response = await axios.post('http://localhost:5000/signin', formData);
       console.log(response.data);
 
-      // If signin successful, navigate to home page
       navigate('/');
     } catch (error) {
       console.error('Error signin in:', error.message);

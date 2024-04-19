@@ -32,12 +32,6 @@ function ContactUs() {
                 <li><a href="#" className="playfair-display-font text-lg font-playfair-display-italic  text-creamyVanilla hover:text-black transition">dress</a></li>
             </ul>
           </div>
-          <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-10 sm:mb-0">
-            <h4 className="text-white text-2xl mb-8 font-semibold relative">Follow us</h4>
-            <div className="flex">
-              {/* Social Icons */}
-            </div>
-          </div>
         </div>
       </div>
     </footer>
