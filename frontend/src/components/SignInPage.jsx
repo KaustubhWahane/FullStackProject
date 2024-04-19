@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function SignInPage() {
   const [formData, setFormData] = useState({
-    email: '',
+    name: '', // Change email to name
     password: ''
   });
 
@@ -34,12 +34,12 @@ function SignInPage() {
         <h2 className="text-3xl font-bold mb-4">Sign In</h2>
         <form onSubmit={handleSubmit} className="">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email address</label>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label> {/* Change htmlFor and label text */}
             <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              type="text" 
+              id="name"
+              name="name" 
+              value={formData.name}
               onChange={handleChange}
               className="mt-1 p-2 border border-gray-300 rounded-md w-full"
               autoComplete="username"

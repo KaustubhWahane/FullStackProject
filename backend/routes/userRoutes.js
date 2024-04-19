@@ -4,9 +4,9 @@ const UserModel = require("../model/userModel");
 
 router.post('/signin', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { name, password } = req.body;
     
-    const newUser = new UserModel({ email, password });
+    const newUser = new UserModel({ name, password }); 
     await newUser.save(); 
     console.log('This is the message to check if the user is entered', newUser);
 
