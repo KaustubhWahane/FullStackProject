@@ -11,7 +11,7 @@ const Breakfast = ({ name, description, rating, image }) => {
       <p className='text-creamyVanilla'><span className=" font-semibold font-pacifico">Rating:</span> {rating}/ 5</p>
       <Toaster richColors position="top-center"/>
       <div className=' border-black mt-2 flex justify-center items-center'>
-        <button className="mt-2 bg-richChocolate hover:bg-warmBeige text-creamyVanilla px-4 py-2 rounded- mr-4" onClick={() => toast.error('Have you signed it?')}>
+        <button className="mt-2 bg-richChocolate hover:bg-warmBeige text-creamyVanilla px-4 py-2 rounded mr-4" onClick={() => toast.error('Have you signed it?')}>
           Add
         </button>
       </div>

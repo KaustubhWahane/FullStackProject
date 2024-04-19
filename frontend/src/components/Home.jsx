@@ -9,6 +9,12 @@ function Home() {
   const [mealData, setMealData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
+
 
   async function fetchData() {
     try {
@@ -37,7 +43,6 @@ function Home() {
     fetchData();
   }, []);
 
-
   if (loading) {
     return (
       <div id="home" className="bg-richChocolate">
@@ -63,6 +68,24 @@ function Home() {
         <h1 className="text-creamyVanilla text-center text-custom text-4xl p-3">
           Here&apos;s the various International food in a simplified way!
         </h1>
+         {/* Cart Items */}
+      <div className="text-creamyVanilla text-center my-8">
+        <h2 className="text-2xl font-bold mb-4">Your Cart Items:</h2>
+        <ul>
+          {Object?.entries(cartItems.reduce((acc, item) => {
+            if (!acc[item.idMeal]) {
+              acc[item.idMeal] = { ...item, quantity: 1 };
+            } else {
+              acc[item.idMeal].quantity++;
+            }
+            return acc;
+          }, {}))?.map(([key ,value], index) => (
+            <li key={index}>
+              {value.quantity}x {value.strMeal}
+            </li>
+          ))}
+        </ul>
+      </div>
         <div className="flex flex-wrap justify-around items-center">
           {mealData?.map((meal) => (
             <div key={meal?.idMeal} className="border border-black p-4 m-4 w-64 h-96 rounded-lg flex flex-col items-center">
@@ -71,9 +94,7 @@ function Home() {
               </div>
               <div className="mt-2 font-bold text-creamyVanilla">{meal?.strMeal}</div>
               <div className="text-creamyVanilla">{meal?.strCategory}</div>
-              <button
-                className="mt-2 bg-blue-500 text-creamyVanilla px-4 py-2 rounded-md"
-              >
+              <button className="mt-2 bg-richChocolate hover:bg-warmBeige text-creamyVanilla px-4 py-2 rounded" onClick={() => addToCart(meal)}>
                 Add
               </button>
             </div>
@@ -81,26 +102,21 @@ function Home() {
         </div>
       </div>
 
-      {/* Breakfasts */}
+      {/* Render Breakfasts */}
       <h1 className="bg-richChocolate font-pacifico text-creamyVanilla text-center text-custom text-4xl p-3">Grab your Breakfast!</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
-        {restaurantData.map((data, index) => (
+        {restaurantData?.map((data, index) => (
           <Breakfast key={index} {...data} />
         ))}
       </div>
 
-      {/* Lunch */}
+      {/* Render Lunch */}
       <h1 className="bg-richChocolate font-pacifico text-creamyVanilla text-center text-custom text-4xl p-3">What&apos;s for dinner?</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
-        {restaurantLunch.map((data, index) => (
+        {restaurantLunch?.map((data, index) => (
           <Lunch key={index} {...data} />
         ))}
       </div>
-      <li>
-                <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]" >
-                  Checkout
-                </button>
-              </li>
     </div>
   );
 }

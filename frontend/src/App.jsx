@@ -4,8 +4,8 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
 import ContactUs from './components/ContactUs';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import SignInPage from './components/SignInPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [isSignedIn, setIsSignedIn] = useState(false);
