@@ -4,11 +4,10 @@ import axios from 'axios';
 
 function SignInPage() {
   const [formData, setFormData] = useState({
-    name: '', // Change email to name
+    name: '', 
     password: ''
   });
 
-  // Navigating the page to Home page
   const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {

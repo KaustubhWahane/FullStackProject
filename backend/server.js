@@ -20,9 +20,6 @@ mongoose.connect(MONGODB_URI, {
   console.log("MongoDB connected");
 }).catch(err => console.error(err));
 
-
-
-
 // Using Routes 
 app.use(userRouter);
 
