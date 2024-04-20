@@ -23,7 +23,7 @@ function NavBar({isSignedIn, onSignIn, onSignOut}) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
       </Helmet>
-      <nav className="flex justify-between items-center mx-auto bg-white">
+      <nav className="flex justify-between items-center mx-auto bg-richChocolate">
         <div className="flex">
           <div className="flex items-center py-3 gap-6">
             <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]" onClick={handleSignInClick}>
@@ -31,16 +31,16 @@ function NavBar({isSignedIn, onSignIn, onSignOut}) {
             </button>
             <ion-icon onclick="onToggleMenu(this)" name="menu" className="text-3xl cursor-pointer md:hidden"></ion-icon>
           </div>
-          <div className="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] right-0 top-[-100%] md:w-auto w-full flex items-center px-5">
-            <ul className="flex md:flex-row flex-col md:items-end md:gap-[4vw] gap-8 justify-end">
+          <div className="nav-links duration-500 md:static absolute bg-richChocolate md:min-h-fit min-h-[60vh] right-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+            <ul className="flex md:flex-row flex-col md:items-end md:gap-[4vw] gap-8 justify-end text-creamyVanilla">
               <li>
-                <a className="hover:text-gray-500" href='/'>Home</a>
+                <a className="hover:text-warmBeige" href='/'>Home</a>
               </li>
               <li>
-                <a className="hover:text-gray-500" href='/about'>About</a>
+                <a className="hover:text-warmBeige" href='/about'>About</a>
               </li>
               <li>
-                <a className="hover:text-gray-500" href='/contact'>Contact Us</a>
+                <a className="hover:text-warmBeige" href='/contact'>Contact Us</a>
               </li>
             </ul>
           </div>
